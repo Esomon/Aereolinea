@@ -1,0 +1,29 @@
+﻿@model aereolinia.Models.TypeEmpleado
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <dl class="list-group">
+        <span style="font-size:20px; text-align:center; ">
+            <dt class="list-group-item active">
+                Detalles del tipo de empelado
+            </dt>
+        </span>
+        </dl>
+        <dl class="list-group">
+            <dt class="list-group-item">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="list-group-item">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+        </dl>
+</div>
+<br />
+<div>
+    <a type="button" class="btn btn-success" asp-action="Index">Volver atras </a> |
+    <a type="button" class="btn btn-danger" asp-action="Edit" asp-route-id="@Model.TypeEmpleadoID">Editar</a>
+
+</div>

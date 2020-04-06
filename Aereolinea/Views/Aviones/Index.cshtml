@@ -1,0 +1,93 @@
+﻿@model IEnumerable<aereolinia.Models.Aviones>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+<span class="table-add float-right mb-3 mr-2">
+    <a asp-action="Create" class="text-success">
+
+        <i class="fas fa-plus fa-2x" aria-hidden="true"></i>
+    </a>
+</span>
+<br />
+<br />
+<br />
+
+<div class="card">
+    <h3 class="card-header font-weight-bold text-uppercase py-4  text-center">
+        Aviones
+
+    </h3>
+
+</div>
+
+
+<div class="card-body">
+    <div id="table" class="table-editable">
+
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Modelos)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Eye)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Capacity)
+                    </th>
+                    <th>Detalles</th>
+                    <th>  Opciones   </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Modelos)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Eye)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Capacity)
+                        </td>
+
+                        <td>
+                            <!--Primer boton -->
+                            <span class="table-up">
+                                <a asp-action="Details" asp-route-id="@item.AvionesID" class="indigo-text">
+                                    <span style="font-size:25px; color: green; ">
+                                        <i class="fas fa-info-circle"
+                                           aria-hidden="true"></i>
+                                    </span>
+                                </a>
+                            </span>
+                        </td>
+                        <td>
+                            <!--Segundo boton -->
+                            <span style="font-size: 25px; color: Dodgerblue; margin:2px;">
+                                <a asp-action="Edit" asp-route-id="@item.AvionesID" class="fas fa-user-edit"></a>
+                            </span>
+
+                            <!--Tercer boton -->
+                            <span style="font-size: 25px; color:red;">
+                                <a asp-action="Delete" asp-route-id="@item.AvionesID">
+                                    <span style="font-size: 25px; color: red; margin:2px;">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </span>
+                                </a>
+                            </span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--   Aqui termina todo -->

@@ -1,0 +1,48 @@
+﻿@model aereolinia.Models.Aviones
+
+@{
+    ViewData["Title"] = "Create";
+}
+<br />
+<br />
+
+<div class="card">
+    <h3 class="card-header font-weight-bold text-uppercase py-4  text-center">
+        Ingrese los datos del avion
+    </h3>
+
+</div>
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group col col-md-10">
+                    <label asp-for="Modelos" class="control-label"></label>
+                    <input asp-for="Modelos" class="form-control" />
+                    <span asp-validation-for="Modelos" class="text-danger"></span>
+                </div>
+                <div class="form-group col col-md-10">
+                    <label asp-for="Eye" class="control-label"></label>
+                    <input asp-for="Eye" class="form-control" />
+                    <span asp-validation-for="Eye" class="text-danger"></span>
+                </div>
+                <div class="form-group col col-md-10">
+                    <label asp-for="Capacity" class="control-label"></label>
+                    <input asp-for="Capacity" class="form-control" />
+                    <span asp-validation-for="Capacity" class="text-danger"></span>
+                </div>
+            </div>
+            <a type="button" class="btn btn-success" asp-action="Index">Volver atras </a> |
+            <input type="submit" value="Crear" class="btn btn-primary" />
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

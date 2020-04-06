@@ -1,0 +1,34 @@
+﻿@model aereolinia.Models.TypeEmpleado
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="card">
+    <h3 class="card-header font-weight-bold text-uppercase py-4  text-center">
+        Ingrese el tipo de empleado
+    </h3>
+
+</div>
+<br />
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-row">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group col-md-10">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <a type="button" class="btn btn-success" asp-action="Index">Volver atras </a> |
+            <input type="submit" value="Crear" class="btn btn-primary" />
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

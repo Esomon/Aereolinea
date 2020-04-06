@@ -1,0 +1,37 @@
+﻿@model aereolinia.Models.Aviones
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<br />
+<h3>¿Esta seguro de eliminar este avion?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Modelos)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Modelos)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Eye)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Eye)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="AvionesID" />
+        <a type="button" class="btn btn-success" asp-action="Index">Cancelar</a> |
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+    </form>
+</div>

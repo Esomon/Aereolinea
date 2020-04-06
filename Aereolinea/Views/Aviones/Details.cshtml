@@ -1,0 +1,39 @@
+﻿@model aereolinia.Models.Aviones
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <dl class="list-group">
+        <span style="font-size:20px; text-align:center; ">
+            <dt class="list-group-item active">
+                Detalles del avion
+            </dt>
+        </span>
+        <dt class="list-group-item">
+            @Html.DisplayNameFor(model => model.Modelos)
+        </dt>
+        <dd class="list-group-item">
+            @Html.DisplayFor(model => model.Modelos)
+        </dd>
+        <dt class="list-group-item">
+            @Html.DisplayNameFor(model => model.Eye)
+        </dt>
+        <dd class="list-group-item">
+            @Html.DisplayFor(model => model.Eye)
+        </dd>
+        <dt class="list-group-item">
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+        <dd class="list-group-item">
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+    </dl>
+</div>
+<br />
+<div>
+    <a type="button" class="btn btn-success" asp-action="Index">Volver atras </a> |
+    <a type="button" class="btn btn-danger" asp-action="Edit" asp-route-id="@Model.AvionesID">Editar</a>
+
+</div>
